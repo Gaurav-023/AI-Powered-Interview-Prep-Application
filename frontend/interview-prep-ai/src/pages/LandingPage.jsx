@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { APP_FEATURES } from "../utils/data";
+import {LuSparkles} from "react-icons/lu"
 
 const LandingPage = () => {
 
@@ -9,6 +10,7 @@ const LandingPage = () => {
   const  handleCTA = () => {};
 
   return (
+    <>
    <div className = "w-full min-h-full bg-[#FFFCEF]">
       <div className = "w-[500px] h-[500px] bg-amber-200/20 blur-[65px] absolute top-0 left-0 "/>
           <div className = "container mx-auto px-4 pt-6 pb-[200px] relative z-10">
@@ -28,20 +30,20 @@ const LandingPage = () => {
               <div className='w-full md:w-1/2 pr-4 mb-8 md:mb-0'>
                 <div className='flex items-center justify-left mb-2'>
                   <div className='flex items-center gap-2 text-[13px] text-amber-600 font-semibold bg-amber-100 px-3 py-1 rounded-full border border-amber-300'>
-                    AI Powered
+                    <LuSparkles/> AI Powered
                   </div>
                 </div>
 
                 <h1 className='text-5xl text-black font-medium mb-6 leading-tight'>
                   Ace Interview with <br/>
-                  <span className='text-transparent bg-clip-text '>
+                  <span className='text-transparent bg-clip-text bg-[radial-gradient(circle, _#FF9324_0%, _#FCD760_100%)] bg-[length:200%_200%] animate-text-shine font-semibold  '>
                     AI-Powered
                   </span>{" "}
                   Learning
                 </h1>
               </div>
 
-              <div className=''>
+              <div className='w-full md:w-1/2'>
                 <p className=''>
                   Get role-specific questions, expand answer when you need them,
                   dive deeper into concepts, and organize everything your way.
@@ -58,6 +60,8 @@ const LandingPage = () => {
           </div>
       </div>
 
+
+</>
   )
 }
 
