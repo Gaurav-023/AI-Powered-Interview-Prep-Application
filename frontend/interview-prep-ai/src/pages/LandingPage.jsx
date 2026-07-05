@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { LuSparkles, LuArrowRight, LuBrainCircuit, LuTarget, LuZap, LuCode, LuCheckCircle } from "react-icons/lu";
+import { LuSparkles, LuArrowRight, LuBrainCircuit, LuTarget, LuZap, LuCode, LuCheck } from "react-icons/lu";
 import Modal from "../components/Modal";
 import Login from "../pages/Auth/Login";
 import SignUp from "../pages/Auth/SignUp";
@@ -29,7 +29,7 @@ const FEATURES = [
   { id: 1, title: "Role-Specific Prep", description: "Tailored questions for your exact industry and seniority level.", icon: <LuTarget /> },
   { id: 2, title: "Deep Dive Concepts", description: "Expand on complex topics with AI-guided explanations.", icon: <LuCode /> },
   { id: 3, title: "Instant Feedback", description: "Get real-time corrections and suggestions to improve your delivery.", icon: <LuZap /> },
-  { id: 4, title: "Smart Organization", description: "Keep your notes, frameworks, and answers perfectly structured.", icon: <LuCheckCircle /> },
+  { id: 4, title: "Smart Organization", description: "Keep your notes, frameworks, and answers perfectly structured.", icon: <LuCheck /> },
 ];
 
 const LandingPage = () => {
