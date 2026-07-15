@@ -44,10 +44,38 @@ exports.addQuestionToSession = async (req, res) => {
 // @route POST /api/question/:id/pin
 // @access Private
 exports.togglePinQuestion = async (req,res) => {
+    try {
+        const question = await Question.findById(req.params.id);
+         if (!question) {
+            return res.status(404).json({ success: false, message: "Question not found"})
+         }
 
+         question.isPinned = !question.isPinned;
+         await question.save();
+         res.status(200).json({ success: true, question })
+
+    } catch(error) {
+        res.status(500).json({ message: "Server Error" });
+    }
 }
 
 // @desc Update a note for a question
 // @route POST /api/question/:id/note
 // @access Private
-exports.updateQuestionNote = async (req, res) => {}
+exports.updateQuestionNote = async (req, res) => {
+    try {
+        const { note } = req.body;
+        const question = await Question.findById(req.params.id);
+
+        if(!question) {
+            return res.status(404).json({ success: false, message: "Questio not found"})
+        }
+
+        question.note = note || "",
+        await question.save();
+        res.status(200).json({ success: true, question });
+
+    } catch(error) {
+        res.status(500).json({ message: "Server Error" });
+    }
+}
